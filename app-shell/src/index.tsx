@@ -6,9 +6,9 @@ import { createContainersApi } from 'piral-containers';
 
 const piral = createPiral({
   requestPilets() {
-    return fetch('http://localhost:9000/api/v1/pilet')
-      .then(res => res.json())
-      .then(res => res.items);
+    return fetch('https://feed.piral.cloud/api/v1/pilet/products')
+      .then((res) => res.json())
+      .then((res) => res.items);
   },
   extendApi: [createContainersApi()],
 });
